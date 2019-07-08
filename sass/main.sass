@@ -1,0 +1,629 @@
+$color-gray: #f5f5f5
+$color-orange: #ff8b38
+$color-orange-hover: #ff9b51
+$color-text: #86878b
+$color-input-text: #bdbdbd
+$color-black: black
+$color-white: white
+$color-icons: #333
+$raleway: 'Raleway', sans-serif
+$opensans: 'Open Sans', sans-serif
+%navmenu 
+  display: block
+  position: absolute
+  top: 50%
+  margin-top: -1px
+  left: 50%
+  margin-left: -10px
+  width: 20px
+  height: 3px
+  background-color: white   
+
+
+body 
+    color: $color-white
+    font-family: $opensans
+    font-size: 16px
+    a, a:hover, a:active, a:visited, a:focus
+        color: $color-white
+        text-decoration: none
+    ol, ul 
+        margin-top: 0
+        margin-bottom: 0
+
+  
+.header-nav
+    background-color: $color-black
+    height: 72px
+    
+
+
+/* Nav-bar*/
+.nav
+    &-bar
+        width: 100%
+        height: 72px
+        display: flex
+        justify-content: space-between
+        align-items: center
+        font-weight: 600
+        list-style-type: none
+        text-align: right
+    &-item
+        opacity: 0.7
+        font-size: 14px
+        transition: all .1s
+        &:hover
+            opacity: 1
+        a
+            &:active
+                opacity: 1
+                color: $color-orange
+            
+/* Nav bar for mobile */
+.nav-menu
+    display: none
+    height: 72px
+    width: 30px
+    opacity: 0.7
+    text-align: right
+    span
+        @extend %navmenu
+    &::after
+        content: ''
+        @extend %navmenu
+        transform: translateY(7px)
+        transition: all .2s
+    &::before
+        content: ''
+        @extend %navmenu
+        transform: translateY(-7px)
+        transition: all .2s
+    &-active
+        opacity: 1
+        span
+            height: 0
+        &::after
+            transform: rotate(45deg)
+        &::before 
+            transform: rotate(-45deg)
+    
+      
+
+
+.logo
+    margin-top: 22px
+
+/* Header */
+.header
+    position: relative
+    top: 0
+    left: 0
+    right: 0
+    height: 711px
+    background: url(../img/header/bg-header.jpg) center no-repeat
+    background-size: cover
+    &-logo 
+        margin-top: 110px
+        margin-bottom: 30px
+    &-headline 
+        font-family: $raleway
+        text-transform: uppercase
+        &::after
+            content: ''
+            display: block
+            width: 65px
+            margin: 40px 0
+            border: 2px solid $color-white
+    &-text 
+        margin-bottom: 40px
+        font-family: $opensans
+        font-weight: 400
+        color: $color-gray
+        line-height: 23px
+        opacity: 0.8
+
+.download
+    margin-top: 40px
+    padding: 13px 30px
+    font-family: $opensans 
+    font-size: 15px
+    font-weight: 600
+    text-align: center
+    border: 2px solid #fff
+    transition: all .3s
+    &:hover
+        color: $color-black
+        background-color: $color-white
+
+/* Header form*/
+.form
+    margin-left: auto
+    margin-right: 0
+    background-color: $color-white
+    border-radius: 3px
+    width: 360px
+    
+    &-header
+        margin-top: 140px
+        text-align: center
+        &-text 
+            margin-bottom: 40px
+            padding: 20px 52px 15px
+            background-color: $color-gray
+            border-top-left-radius: 3px
+            border-top-right-radius: 3px
+            color: $color-black
+            font-size: 20px
+            font-weight: 600
+            span 
+                color: $color-orange
+                text-transform: uppercase
+        &-input
+            margin-bottom: 42px
+            padding-left:  15px
+            color: $color-black
+            font-size: 14px
+            border: none
+            width: 285px
+            height: 32px
+            border-bottom: 1px solid rgba(189,189,189,0.5)
+            border-right: 1px solid rgba(189,189,189,0.5)
+            &:focus
+                padding: 0 0 1px 14px
+                outline: none
+                border: 1px solid $color-orange
+            &::placeholder 
+                color: $color-input-text
+    &-button 
+        display: block
+        width: 100%
+        height: 52px
+        color: $color-white
+        background-color: $color-orange
+        border-bottom-left-radius: 3px
+        border-bottom-right-radius: 3px
+        border: none
+        transition: all .2s
+        &:hover
+            background-color: $color-orange-hover
+        &:focus
+            outline: none
+            
+
+/* Brand */
+.brand
+    padding: 0
+    position: relative
+    display: block
+    width: 100%
+    color: $color-black
+    box-shadow: 0 2px 3px rgba(0,0,0,0.38)
+    &-content
+        h3
+            margin-top: 20px
+            font-family: $opensans
+            font-weight: 600 
+            font-size: 20px
+        p
+            color: $color-text
+    &-icons
+        font-size: 48px 
+        display: flex
+        justify-content: space-between
+        align-items: center
+        color: $color-icons
+        i
+            opacity: 0.38
+            &:hover
+                opacity: 1
+
+
+/* Features */
+section
+    padding: 100px 0
+    color: $color-text
+.features-tab
+    padding: 140px 0 116px
+    background-color: $color-gray
+    &-img_city
+        display: block
+        margin-left: auto
+
+.tab
+    &-nav
+        text-transform: uppercase
+        .nav-link.active
+            background-color: $color-orange
+        .nav-link
+            margin-bottom: 1px
+            padding-top: 42px
+            display: block
+            height: 110px
+            width: 110px
+            text-align: center
+            border-radius: 0
+            background-color: $color-icons
+            box-shadow: 0 1px 1px rgba(0,0,0,0.38)
+            &:nth-child(1)
+                border-top-left-radius: 2px
+                border-top-right-radius: 2px 
+            &:last-child
+                border-bottom-left-radius: 2px
+                border-bottom-right-radius: 2px
+.tab-content
+    color: $color-black
+.tab-pane
+    h3
+        font-family: $opensans
+        font-weight: 600
+        font-size: 20px
+        margin-bottom: 50px
+    p
+        margin-bottom: 25px
+
+.button-start
+    width: 120px
+    height: auto
+    padding: 15px 25px
+    color: $color-white
+    font-size: 15px
+    border-radius: 3px
+    box-shadow: 0 1px 1px rgba(0,0,0,0.38)
+
+
+.features
+    font-size: 14px
+    &-gray
+        background-color: $color-gray
+    &-content
+        color: $color-text
+        &-headline
+            color: $color-black
+            font-weight: 600
+            font-size: 20px
+            &::after
+                content: ''
+                display: block
+                width: 65px
+                margin: 30px 0
+                border: 2px solid $color-orange
+        &-progress
+            margin-top: 40px
+            i.fa
+                color: $color-orange
+                padding: 10px
+                border: 2px solid $color-orange
+                border-radius: 50%
+            h4  
+                color: #212121
+                font-size: 14px
+                font-weight: 600
+    &-img
+        width: 100%
+               
+.process
+    &-header
+        text-align: center
+        margin-bottom: 75px
+        h1
+            text-transform: uppercase
+            color: #212121
+            &::after
+                content: ''
+                display: block
+                width: 65px
+                margin: 30px auto
+                border: 2px solid $color-orange
+
+    &-icons
+        text-align: center
+        i.fa
+            padding: 15px
+            color: $color-orange
+            border: 2px solid $color-orange
+            border-radius: 50%
+            width: 70px
+            height: 70px
+            font-size: 35px
+        h4  
+            margin: 25px
+            color: $color-icons
+            font-weight: 600
+            
+/* Pricing */
+.pricing
+    background-color: $color-gray
+    &-header
+        @extend .process-header
+
+    &-blocks
+        width: 100%
+        text-align: center
+        &-price
+            color: $color-white
+            margin-top: 20px
+            h3
+                background-color: $color-icons
+                padding: 22px 0
+                font-weight: 600
+                font-size: 20px
+                margin-bottom: 1px
+            b
+                font-family: $raleway
+                display: block
+                font-size: 30px
+                background-color: $color-icons
+                span
+                    font-size: 70px
+            p
+                display: block
+                padding: 17px 0 0
+                margin-bottom: 0
+                background-color: $color-icons
+                color: $color-text
+                &:after
+                    margin-top: 17px
+                    content: ""
+                    display: block
+                    height: 5px
+                    background-color: $color-orange
+            p.price-center
+                &:after
+                    content: "our most popular"
+                    color: $color-white
+                    height: 40px
+                    display: block
+                    background-color: $color-orange
+                    text-transform: uppercase
+                    line-height: 40px
+                    font-weight: 600
+                    font-size: 14px
+        &-info
+            display: block
+            p
+                
+                padding: 15px 0
+                margin: 1px 0
+                background-color: $color-white
+                text-transform: uppercase
+                font-size: 14px
+                
+/* Testimonials */
+.testimonial
+    &-header
+        @extend .process-header
+    &-slider
+        position: relative
+        &-arrow
+            position: absolute
+            top: 40%
+            font-size: 30px
+            color: $color-orange
+            z-index: 10
+        &-content
+            width: 200px
+            outline: none
+    &-text
+        display: block
+        max-width: 270px
+        padding: 23px 10px
+        margin: 0 auto  
+        background-color: $color-gray
+        border: 1px solid (rgba(255,255,255,0))
+        border-radius: 2px
+        position: relative
+        &:after
+            content: ""
+            position: absolute
+            bottom: -30px
+            left: 30px
+            border: 15px solid transparent	
+            border-top: 15px solid $color-gray
+
+
+    &-user
+        display: flex
+        flex-direction: row
+        align-items: center
+        margin: 15px auto
+        max-width: 270px
+        &-avatar
+            margin: 0 10px
+        .user-info  
+            margin-top: 30px
+            
+.slick
+    &-prev
+        left: -10px
+    &-next 
+        right: -10px
+
+/* Orders */
+.orders
+    padding-bottom: 0
+    color: $color-white
+    background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url('../img/orders/bg.jpg') center no-repeat
+    background-size: cover  
+    &-header
+        text-align: center
+        margin-bottom: 75px
+        h1
+            text-transform: uppercase
+            &::after
+                content: ''
+                display: block
+                width: 65px
+                margin: 30px auto
+                border: 2px solid $color-white
+        p
+            color: $color-white
+            opacity: 0.8 
+            margin-bottom: 35px  
+
+/* Contact */
+.contact
+    &-header
+        @extend .process-header
+    &-input
+        margin-bottom: 35px
+        padding-left:  15px
+        color: $color-black
+        font-size: 14px
+        border: none
+        width: 100%
+        height: 32px
+        border-bottom: 1px solid rgba(189,189,189,0.5)
+        border-right: 1px solid rgba(189,189,189,0.5)
+        &-edit
+            height: 165px
+        &:focus
+            padding: 0 0 1px 14px
+            outline: none
+            border: 1px solid $color-orange
+        &::placeholder 
+            color: $color-input-text
+    &-button
+        margin: 0 auto
+        width: 150px
+        border-radius: 2px
+        color: $color-white
+        
+/* Footer */
+.footer
+    color: $color-white
+    background-color: $color-black
+    text-align: center
+    &-icons
+        margin: 10px 0
+        font-size: 20px
+        i.fa
+            opacity: 0.7
+            margin: 0 5px
+            &:hover
+                opacity: 1
+        
+    p 
+        font-size: 12px
+        color: $color-text
+        margin-bottom: 5px
+        a 
+            font-size: 14px
+            font-weight: 600
+            opacity: 0.5
+            &:hover
+                opacity: 1
+
+
+
+
+
+
+
+
+/* Media */
+@media (max-width: 992px) 
+    .form
+        display: none
+    .brand
+        &-content
+            h3
+                margin: 0
+            p
+                display: none
+        &-icons
+            height: 105px
+            font-size: 38px
+    .features
+        &-img_city
+            display: none
+        &-img
+            margin-top: 40px
+    
+    .process-icons
+        p
+            margin-bottom: 70px
+    .contact-button
+        width: 100%
+
+
+@media (max-width: 768px)
+    .header
+        &-headline
+            font-size: 34px
+            &:after
+                margin: 20px 0
+    .nav
+        &-list
+            position: absolute
+            top: 72px
+            right: 15px
+            opacity: 0
+            transform: scaleY(0) 
+            transform-origin: 0 0
+            transition: .5s ease-in-out
+            &-active
+                opacity: 1
+                transform: scaleY(1) scaleX(1)
+        &-menu  
+            display: block
+        &-bar
+            flex-direction: column
+            float: right
+            height: auto
+            margin: 0
+            padding: 0
+        &-item
+            width: 120px
+            text-align: center
+            background-color: #111
+            padding: 8px 0 
+    .features-tab
+        padding: 40px 0
+    .tab-nav
+        display: flex
+        flex-direction: row !important
+        justify-content: center
+        margin-bottom: 20px
+        .nav-link
+            margin: 0 1px
+            padding: 0
+            height: 50px
+            line-height: 50px
+            box-shadow: 1px 0 1px rgba(0,0,0, 0.38)
+            border-radius: none
+            &:nth-child(1)
+                border-bottom-left-radius: 2px
+                border-top-left-radius: 2px 
+            &:last-child
+                border-top-right-radius: 2px
+                border-bottom-right-radius: 2px
+    .tab-pane
+        h3
+            margin-bottom: 20px
+        p
+            margin-bottom: 25px  
+
+    .slick
+        &-prev
+            left: 10px
+        &-next 
+            right: 10px
+    
+    .orders
+        &-header
+            h1
+                font-size: 36px
+ 
+
+
+
+@media (max-width: 576px)
+    .brand
+        &-content
+            h3
+                margin: 15px 0 10px
+                text-align: center
+        &-icons
+            height: auto
+            margin-bottom: 15px
